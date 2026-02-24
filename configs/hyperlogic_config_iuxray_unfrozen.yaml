@@ -1,0 +1,41 @@
+model:
+  vocab_size: 21648
+  embed_dim: 512
+  num_heads: 8
+  num_decoder_layers: 3
+  dropout: 0.2
+  use_relational_memory: true
+  use_mcln: false  # Keep standard logic decoder for now, or true? User wants MAX metrics.
+  # Let's stick to the stable "Logic" architecture but unfreeze encoder.
+  # If we change too many things (MCLN + Unfreeze), we won't know what worked.
+  # Epoch 50 of Job 3393 was great. Let's optimize that.
+  rm_num_slots: 3
+  rm_d_model: 512
+  
+  visual_encoder:
+    type: 'biomedclip' 
+    freeze_backbone: false  # UNFREEZE for max performance
+
+dataset:
+  data_root: 'data'
+  hypergraph_path: 'HyperLogicRAG/data/hypergraph.pkl'
+  manifest_file: 'iu_cxr_clean.jsonl'
+  image_size: 224
+  max_length: 128
+  batch_size: 16  # Reduce batch size due to unfreezing (more VRAM)
+  num_workers: 2
+  val_split: 'test'
+
+training:
+  val_every: 5
+  epochs: 100 
+  learning_rate: 0.0001   # Decoder LR
+  backbone_lr: 0.00001    # Backbone LR (1e-5)
+  weight_decay: 0.05
+  lambda_logic: 0.1
+  gradient_clip: 1.0
+
+output:
+  output_dir: 'results/hyperlogic_iuxray_unfrozen'
+  save_every: 5
+  log_every: 10

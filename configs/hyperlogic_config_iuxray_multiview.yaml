@@ -1,0 +1,39 @@
+model:
+  pretrained_model: 'results/hyper_r2gen_fresh/model_best.pth'
+  vocab_size: 21648
+  embed_dim: 512
+  num_heads: 8
+  num_decoder_layers: 3
+  dropout: 0.3              # Higher dropout for small IU CXR dataset
+  use_relational_memory: true
+  use_mcln: true            # ENABLE MCLN (Memory-Conditioned Layer Norm)
+  rm_num_slots: 3
+  rm_d_model: 512
+  
+  visual_encoder:
+    type: 'biomedclip' 
+    freeze_backbone: true   # Keep BiomedCLIP frozen
+
+dataset:
+  data_root: 'HyperLogicRAG/data'
+  hypergraph_path: 'HyperLogicRAG/data/hypergraph.pkl'
+  manifest_file: 'iu_cxr_clean.jsonl'
+  image_size: 224
+  max_length: 128
+  batch_size: 128           # Large batch for H100
+  num_workers: 8            # Match H100 throughput
+  val_split: 'test'
+  use_multi_image: true
+
+training:
+  val_every: 2              # Frequent validation for small data
+  epochs: 50                # Shorter, rely on early stopping
+  learning_rate: 0.0001     # Standard lr for fresh train
+  weight_decay: 0.05        # Good regularization
+  lambda_logic: 0.1
+  gradient_clip: 1.0
+  save_every: 2
+
+experiment:
+  output_dir: 'results/hyperlogic_iuxray_multiview'
+  log_every: 10

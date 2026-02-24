@@ -1,0 +1,18 @@
+torch>=2.1.0
+torchvision>=0.16.0
+transformers>=4.36.0
+accelerate>=0.25.0
+bitsandbytes>=0.41.0
+peft>=0.7.0
+torch_geometric>=2.4.0
+scikit-learn
+pandas
+numpy
+tqdm
+pyyaml
+tensorboard
+radgraph  # If available, or install from source
+fpgrowth_py  # For hyperedge mining
+# salesforce-lavis  # For some baseline VLM utilities if needed
+openai  # For potenial GPT-4 eval
+wandb

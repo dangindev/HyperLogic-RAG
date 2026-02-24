@@ -1,0 +1,26 @@
+model:
+  vocab_size: 30522  # BERT tokenizer vocab size
+  embed_dim: 512
+  num_heads: 8
+  num_decoder_layers: 6
+
+dataset:
+  data_root: 'data'
+  hypergraph_path: 'data/hypergraph.pkl'
+  manifest_file: 'mimic_cxr_clean.jsonl'
+  image_size: 224
+  max_length: 128
+  batch_size: 8
+  num_workers: 4
+
+training:
+  epochs: 2  # Quick test run
+  learning_rate: 0.0001
+  weight_decay: 0.01
+  lambda_logic: 0.1  # Weight for logic loss (Reduced to prevent collapse)
+  gradient_clip: 1.0
+  save_every: 1  # Save every epoch for test
+
+experiment:
+  output_dir: 'results/hyperlogic_rag'
+  log_dir: 'logs/hyperlogic_rag'
