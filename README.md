@@ -50,8 +50,8 @@ HyperLogicRAG/
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/HyperLogicRAG.git
-   cd HyperLogicRAG
+   git clone https://github.com/anonymous-researcher/HyperLogic-RAG.git
+   cd HyperLogic-RAG
    ```
 2. Install the required dependencies:
    ```bash
