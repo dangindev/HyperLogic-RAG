@@ -90,8 +90,8 @@ python eval_hyperlogic_v2_standalone.py --cfg configs/hyperlogic_config_biomedcl
 If you find this code or our paper useful in your research, please consider citing:
 ```bibtex
 @inproceedings{HLRAG_MICCAI2026,
-  title={HyperLogic-RAG: Logic-Consistency Enforced Radiology Report Generation via Hypergraph Constraints},
-  author={Given Names and Family Names},
+  title={HyperLogic-RAG: Neuro-Symbolic Medical Report Generation via Hypergraph Knowledge Retrieval},
+  author={Dang H. Nguyen, Hieu H. Pham, Hieu H. Pham},
   booktitle={MICCAI},
   year={2026}
 }
