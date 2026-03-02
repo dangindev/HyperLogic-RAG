@@ -1,7 +1,7 @@
 # HyperLogic-RAG: Enhancing Clinical Efficacy in Medical Report Generation via Hypergraph-Guided Retrieval
 
 <p align="center">
-  <img src="figures/pipeline.png" alt="HyperLogic-RAG Pipeline" width="100%">
+  <img src="figures/pipeline_HyperlogicRAG.png" alt="HyperLogic-RAG Pipeline" width="100%">
 </p>
 
 [![MICCAI 2026](https://img.shields.io/badge/MICCAI-2026-blue.svg)](https://miccai2026.org/)
@@ -83,19 +83,6 @@ python eval_hyperlogic_v2_standalone.py --cfg configs/hyperlogic_config_biomedcl
 ```
 
 *(For the frozen BiomedCLIP visual encoder ablations, use `run_hyperlogic_biomedclip_frozen.sbatch`)*.
-
----
-
-**Citation**
-If you find this code or our paper useful in your research, please consider citing:
-```bibtex
-@inproceedings{HLRAG_MICCAI2026,
-  title={HyperLogic-RAG: Enhancing Clinical Efficacy in Medical Report Generation via Hypergraph-Guided Retrieval},
-  author={Anonymous},
-  booktitle={MICCAI},
-  year={2026}
-}
-```
 
 **License**
 This project is licensed under the MIT License - see the LICENSE file for details.
