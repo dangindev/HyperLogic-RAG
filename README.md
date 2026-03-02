@@ -1,4 +1,4 @@
-# HyperLogic-RAG: Logic-Consistency Enforced Radiology Report Generation via Hypergraph Constraints
+# HyperLogic-RAG: Enhancing Clinical Efficacy in Medical Report Generation via Hypergraph-Guided Retrieval
 
 <p align="center">
   <img src="figures/pipeline.png" alt="HyperLogic-RAG Pipeline" width="100%">
@@ -50,8 +50,8 @@ HyperLogicRAG/
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/anonymous-researcher/HyperLogic-RAG.git
-   cd HyperLogic-RAG
+   git clone https://anonymous.4open.science/r/HyperLogic-RAG
+   cd HyperLogicRAG
    ```
 2. Install the required dependencies:
    ```bash
@@ -84,6 +84,18 @@ python eval_hyperlogic_v2_standalone.py --cfg configs/hyperlogic_config_biomedcl
 
 *(For the frozen BiomedCLIP visual encoder ablations, use `run_hyperlogic_biomedclip_frozen.sbatch`)*.
 
+---
+
+**Citation**
+If you find this code or our paper useful in your research, please consider citing:
+```bibtex
+@inproceedings{HLRAG_MICCAI2026,
+  title={HyperLogic-RAG: Enhancing Clinical Efficacy in Medical Report Generation via Hypergraph-Guided Retrieval},
+  author={Anonymous},
+  booktitle={MICCAI},
+  year={2026}
+}
+```
 
 **License**
 This project is licensed under the MIT License - see the LICENSE file for details.

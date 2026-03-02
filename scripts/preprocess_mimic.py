@@ -60,7 +60,8 @@ def preprocess(args):
         
         # Image path construction (MIMIC structure)
         # files/p{subject_id[:2]}/p{subject_id}/s{study_id}/{dicom_id}.jpg
-        # Assuming standard MIMIC-JPG structure.
+        # The user has `images/` folder. It usually mimics the structure?
+        # Let's verify structure later. Assuming standard MIMIC-JPG structure.
         p_group = f"p{str(subject_id)[:2]}"
         p_subject = f"p{subject_id}"
         image_rel_path = os.path.join(p_group, p_subject, f"s{study_id}", f"{dicom_id}.jpg")
